@@ -1,0 +1,4 @@
+google-generativeai
+pyPDF2
+Flask
+python-dotenv
