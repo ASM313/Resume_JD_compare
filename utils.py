@@ -25,13 +25,16 @@ def pdf_text(uploaded_file):
     return text        
 
 # Prompt Template
-prompt="""
-        Act as a Skilled and very experiended ATS(Application Tracking System) with a deep understading of IT field, software engineering, data science, data analysis, big data engineering, Generative ai etc. Your task is to evaluate the resume based on given job description. Consider that job market is very compititive and you should provide best assistance for improving the resumes. Assign percentage matching based on job description and the missing keywords with high accuracy.
-        This is resume : {text} 
-        This is job description: {jd}
+def prompt_template(text, jd):
         
-        give me response in this format{{"Matching Percent": "%","Missing Keywords": [],
-        "Profile Summary":" "
-        }}
-"""
+    prompt="""
+            Act as a Skilled and very experiended ATS(Application Tracking System) with a deep understading of IT field, software engineering, data science, data analysis, big data engineering, Generative ai etc. Your task is to evaluate the resume based on given job description. Consider that job market is very compititive and you should provide best assistance for improving the resumes. Assign percentage matching based on job description and the missing keywords with high accuracy.
+            This is resume : {text} 
+            This is job description: {jd}
+            
+            give me response in this format{{"Matching Percent": "%","Missing Keywords": [],
+            "Profile Summary":" "
+            }}
+    """
+    return prompt
 
