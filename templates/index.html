@@ -21,17 +21,15 @@
                 <textarea class="form-control" id="job_description" name="job_description" rows="5" placeholder="Enter the job description here..." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a href='/'>Back</a>
         </form>
         <!-- Result display area -->
         {% if result %}
-        {{result}}
-        <!-- Result display area
-        <div class="mt-4">
-            <h4>Results:</h4>
-            <p><strong>Matching Percent:</strong> {{ result.matching_percent }}%</p>
-            <p><strong>Missing Keywords:</strong> {{ result.missing_keywords | join(', ') }}</p>
-            <p><strong>Profile Summary:</strong> {{ result.profile_summary }}</p>
-        </div> -->
+        
+        <!-- Result display area -->
+        
+            <p>{{result}}</p>
+       
         {% endif %}
     </div>
 

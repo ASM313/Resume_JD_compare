@@ -33,8 +33,14 @@ def prompt_template(text, jd):
             This is job description: {jd}
             
             give me response in this format{{"Matching Percent": "%","Missing Keywords": [],
-            "Profile Summary":" "
             }}
     """
     return prompt
 
+# Beautify the output
+def beautify(gemini_response):
+    prompt = f"Act as senior web developer and write a beautiful html code for this response. only give components like paragraphs, tables, headings, and include inline css. i need code between <body> and </body>. i will embed this code in my html code: {gemini_response}"
+    
+    html_code = get_gemini_response(prompt)
+    
+    return html_code

@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
+import re
 from utils import *
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    # return "Asslamu alaikum"
     return render_template("index.html")
 
 @app.route('/compare', methods=['GET', 'POST'])
@@ -23,11 +23,14 @@ def compare():
 
         # Get response from Gemini
         gemini_response =  get_gemini_response(prompt)
-        
         print(gemini_response)
+              
         return render_template('index.html', result=gemini_response)
+
+        
+        
     return render_template('index.html', result=None)
-    # return "Successfull"
+    
     
 
 if __name__=="__main__":
